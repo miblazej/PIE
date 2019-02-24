@@ -1,0 +1,22 @@
+def dfp(A):
+    pivot = A[-1]
+    table = []
+    table.append(pivot)
+    granical = 0
+    granicap = 1
+    for i in range(len(A)-1):
+        if A[i] > pivot:
+            table.insert(granicap, A[i])
+        elif A[i] == pivot:
+            table.insert(granical, A[i])
+            granicap += 1
+        else:
+            table.insert(granical, A[i])
+            granical += 1
+            granicap += 1
+    return table
+
+A = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+B = dfp(A)
+print('a')
+# Michal Blazej
