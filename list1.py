@@ -1,2 +1,4 @@
-print('ss')
-print('d')
+import django
+
+
+
