@@ -9,10 +9,16 @@ def odwrocSubListe(glowa, start, stop):
     # stworzenie czlonow listy majacych przechowac wskazniki do pierwszego czlonu
     # zamiany oraz ostatniego czlonu zamiany
     # do zrobienia jutro
-    
-    
-    
-    return glowa
+    start_zmiany = ListNode(0, glowa)
+    for _ in range(1, start):
+        start_zmiany = start_zmiany.next
+    # w tym momencie start_zmiany jest poczatkiem którą mam odwrócić
+    # proces odwrocenia listy
+    sublista_iter = start_zmiany.next
+    for _ in range(stop - start):
+        temp = sublista_iter.next
+        sublista_iter.next, temp.next, start_zmiany.next = (temp.next, start_zmiany.next, temp)
+    return glowa.next
 
 
 L1 = ListNode(1)
